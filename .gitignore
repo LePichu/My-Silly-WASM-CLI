@@ -1,0 +1,9 @@
+.vscode
+.idea
+
+/bin
+
+/target
+Cargo.lock
+
+deno.lock

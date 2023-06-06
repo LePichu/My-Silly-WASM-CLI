@@ -1,0 +1,21 @@
+{
+    "fmt": {
+        "indentWidth": 4,
+        "semiColons": false,
+        "useTabs": true
+    },
+    "imports": {
+        "esbuild": "https://deno.land/x/esbuild@v0.17.18/mod.js",
+        "esbuild_plugin_http_imports": "https://deno.land/x/esbuild_plugin_http_imports@v1.3.0/index.ts",
+        "./target/wasm32-wasi/release/my_silly_wasm_cli.wasm": "./types.d.ts"
+    },
+    "tasks": {
+        "build": "cargo build --target wasm32-wasi --release; deno run -A build.ts",
+        "build:prod": "cargo build --target wasm32-wasi --release; deno run -A build.ts --prod"
+    },
+    "lint": {
+        "exclude": [
+            "bin/**",
+        ]
+    }
+}
